@@ -16,6 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+# entendo respostas das views nas Rotas
+from blog.views import Home
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    # retorno basico para rotas
+    # http://127.0.0.1:8000/rotateste/
+    path('rotateste/', Home),
 ]
