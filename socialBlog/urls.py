@@ -14,13 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 # entendo respostas das views nas Rotas
 from blog.views import Home
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('blog.urls', namespace='blog')),
 
     # retorno basico para rotas
     # http://127.0.0.1:8000/rotateste/
