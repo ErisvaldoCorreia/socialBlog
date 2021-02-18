@@ -3,18 +3,27 @@
 <html>
     <head>
         <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     </head>
     <body>
         
-        <div id="content">
-            {% block content %}
-            {% endblock %}
+        <div class="container">
+            <div class="container-fluid">
+                <div class="row">
+                    
+                    <div class="col offset-3" id="main">
+                        {% block content %}
+                        {% endblock %}
+                    </div>
+
+                    <div class="col-3 px-1 position-fixed" id="sticky-sidebar">
+                        <h2>My blog</h2>
+                        <p>This is my blog.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        
-        <div id="sidebar">
-            <h2>My blog</h2>
-            <p>This is my blog.</p>
-        </div>
-        
+
     </body>
 </html>
+
